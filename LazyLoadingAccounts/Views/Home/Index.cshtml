@@ -1,0 +1,45 @@
+﻿@model IList<LazyLoadingAccounts.DTO.AccountRoleDTO>
+
+@{
+    ViewData["Title"] = "Accounts";
+    int totalRecords = Model.Count > 0 ? Model[0].TotalRecords: 0;
+}
+
+<div class="my-3 text-right" style="text-align:right">
+    <strong>Total : @totalRecords </strong>
+</div>
+<table class="table table-hover table-responsive table-light" id="accounts-table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Address1</th>
+            <th>Address2</th>
+            <th>City</th>
+            <th>Postal Code</th>
+            <th>Country</th>
+            <th>Start Date</th>
+            <th>Roles</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var record in Model)
+        {
+            <tr>
+                <td>@record.FirstName</td>
+                <td>@record.LastName</td>
+                <td>@record.Mobile</td>
+                <td>@record.Email</td>
+                <td>@record.Address1</td>
+                <td>@record.Address2</td>
+                <td>@record.City</td>
+                <td>@record.PostalCode</td>
+                <td>@record.Country</td>
+                <td>@record.StartDate</td>
+                <td>@record.AccountRoles</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,23 @@
+﻿@model IList<LazyLoadingAccounts.DTO.AccountRoleDTO>
+
+@{ 
+    Layout = "";
+}
+
+    @foreach (var record in Model)
+    {
+        <tr>
+            <td>@record.FirstName</td>
+            <td>@record.LastName</td>
+            <td>@record.Mobile</td>
+            <td>@record.Email</td>
+            <td>@record.Address1</td>
+            <td>@record.Address2</td>
+            <td>@record.City</td>
+            <td>@record.PostalCode</td>
+            <td>@record.Country</td>
+            <td>@record.StartDate</td>
+            <td>@record.AccountRoles</td>
+        </tr>
+    }
+
